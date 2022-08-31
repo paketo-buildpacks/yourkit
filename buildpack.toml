@@ -19,7 +19,7 @@ api = "0.7"
   homepage = "https://github.com/paketo-buildpacks/yourkit"
   id = "paketo-buildpacks/yourkit"
   keywords = ["yourkit", "agent", "profiler"]
-  name = "Paketo YourKit Buildpack"
+  name = "Paketo Buildpack for YourKit"
   sbom-formats = ["application/vnd.syft+json", "application/vnd.cyclonedx+json"]
   version = "{{.version}}"
 

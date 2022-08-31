@@ -1,5 +1,5 @@
 # `docker.io/paketobuildpacks/yourkit`
-The Paketo YourKit Buildpack is a Cloud Native Buildpack that contributes the [YourKit][y] Agent and configures it to
+The Paketo Buildpack for YourKit is a Cloud Native Buildpack that contributes the [YourKit][y] Agent and configures it to
 connect to the service.
 
 [y]: https://www.yourkit.com
