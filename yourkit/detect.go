@@ -21,17 +21,21 @@ import (
 
 	"github.com/buildpacks/libcnb"
 	"github.com/paketo-buildpacks/libpak"
+	"github.com/paketo-buildpacks/libpak/bard"
 )
 
-type Detect struct{}
+type Detect struct{
+	Logger bard.Logger
+}
 
 func (d Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) {
-	cr, err := libpak.NewConfigurationResolver(context.Buildpack, nil)
+	cr, err := libpak.NewConfigurationResolver(context.Buildpack, &d.Logger)
 	if err != nil {
 		return libcnb.DetectResult{}, fmt.Errorf("unable to create configuration resolver\n%w", err)
 	}
 
 	if _, ok := cr.Resolve("BP_YOURKIT_ENABLED"); !ok {
+		d.Logger.Info("SKIPPED: variable 'BP_YOURKIT_ENABLED' not set to true")
 		return libcnb.DetectResult{Pass: false}, nil
 	}
 
