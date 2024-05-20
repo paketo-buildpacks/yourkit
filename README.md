@@ -5,15 +5,20 @@ connect to the service.
 [y]: https://www.yourkit.com
 
 ## Behavior
+
 This buildpack will participate if all the following conditions are met
 
 * `$BP_YOURKIT_ENABLED` is set
 
-The buildpack will do the following:
+The buildpack will do the following at build time:
 
-* Contributes a Java agent to a layer and configures `$JAVA_TOOL_OPTIONS` to use it
+* Contributes a Java agent to a layer
+* Contributes a helper that configures the agent at runtime
+
+The helper binary runs at launch time and executes before your application. It reads the `BPL_*` configuration settings and uses them to configure the YourKit agent.
 
 ## Configuration
+
 | Environment Variable | Description
 | -------------------- | -----------
 | `$BP_YOURKIT_ENABLED` | Whether to contribute YourKit support
@@ -22,14 +27,17 @@ The buildpack will do the following:
 | `$BPL_YOURKIT_SESSION_NAME` | Configure the session's name.
 
 ## Bindings
+
 The buildpack optionally accepts the following bindings:
 
 ### Type: `dependency-mapping`
+
 |Key                   | Value   | Description
 |----------------------|---------|------------
 |`<dependency-digest>` | `<uri>` | If needed, the buildpack will fetch the dependency with digest `<dependency-digest>` from `<uri>`
 
 ## Publishing the Port
+
 When starting an application with the YourKit Profiler enabled, a port must be published.  To publish the port in Docker, use the following command:
 
 ```bash
