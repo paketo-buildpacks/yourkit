@@ -2,6 +2,9 @@ github:
   username: ${{ secrets.JAVA_GITHUB_USERNAME }}
   token:    ${{ secrets.PAKETO_BOT_GITHUB_TOKEN }}
 
+helpers:
+  "bin/helper": "$GOMOD/cmd/helper"
+
 codeowners:
 - path:  "*"
   owner: "@paketo-buildpacks/app-monitoring-maintainers"
@@ -20,5 +23,11 @@ docker_credentials:
     password: ${{ secrets.PAKETO_BUILDPACKS_DOCKERHUB_PASSWORD }}
 
 dependencies:
-- id:   yourkit-java
+- name: YourKit Java Agent
+  id:   yourkit-java
   uses: docker://ghcr.io/paketo-buildpacks/actions/yourkit-dependency:main
+- name: YourKit Java Agent ARM64
+  id:   yourkit-java
+  uses: docker://ghcr.io/paketo-buildpacks/actions/yourkit-dependency:main
+  with:
+    arch: arm64
