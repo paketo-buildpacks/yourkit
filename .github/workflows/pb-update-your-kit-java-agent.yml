@@ -1,4 +1,4 @@
-name: Update yourkit-java
+name: Update YourKit Java Agent
 "on":
     schedule:
         - cron: 0 5 * * 1-5
@@ -11,7 +11,7 @@ jobs:
         steps:
             - uses: actions/setup-go@v5
               with:
-                go-version: "1.20"
+                go-version: "1.22"
             - name: Install update-buildpack-dependency
               run: |
                 #!/usr/bin/env bash
@@ -19,9 +19,9 @@ jobs:
                 set -euo pipefail
 
                 go install -ldflags="-s -w" github.com/paketo-buildpacks/libpak/cmd/update-buildpack-dependency@latest
-            - uses: buildpacks/github-actions/setup-tools@v5.5.3
+            - uses: buildpacks/github-actions/setup-tools@v5.6.0
               with:
-                crane-version: 0.19.0
+                crane-version: 0.19.1
                 yj-version: 5.1.0
             - uses: actions/checkout@v4
             - id: dependency
@@ -87,14 +87,14 @@ jobs:
             - uses: peter-evans/create-pull-request@v6
               with:
                 author: ${{ secrets.JAVA_GITHUB_USERNAME }} <${{ secrets.JAVA_GITHUB_USERNAME }}@users.noreply.github.com>
-                body: Bumps `yourkit-java` from `${{ steps.buildpack.outputs.old-version }}` to `${{ steps.buildpack.outputs.new-version }}`.
-                branch: update/buildpack/yourkit-java
+                body: Bumps `YourKit Java Agent` from `${{ steps.buildpack.outputs.old-version }}` to `${{ steps.buildpack.outputs.new-version }}`.
+                branch: update/buildpack/your-kit-java-agent
                 commit-message: |-
-                    Bump yourkit-java from ${{ steps.buildpack.outputs.old-version }} to ${{ steps.buildpack.outputs.new-version }}
+                    Bump YourKit Java Agent from ${{ steps.buildpack.outputs.old-version }} to ${{ steps.buildpack.outputs.new-version }}
 
-                    Bumps yourkit-java from ${{ steps.buildpack.outputs.old-version }} to ${{ steps.buildpack.outputs.new-version }}.
+                    Bumps YourKit Java Agent from ${{ steps.buildpack.outputs.old-version }} to ${{ steps.buildpack.outputs.new-version }}.
                 delete-branch: true
                 labels: ${{ steps.buildpack.outputs.version-label }}, type:dependency-upgrade
                 signoff: true
-                title: Bump yourkit-java from ${{ steps.buildpack.outputs.old-version }} to ${{ steps.buildpack.outputs.new-version }}
+                title: Bump YourKit Java Agent from ${{ steps.buildpack.outputs.old-version }} to ${{ steps.buildpack.outputs.new-version }}
                 token: ${{ secrets.PAKETO_BOT_GITHUB_TOKEN }}
