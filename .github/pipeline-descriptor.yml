@@ -26,6 +26,8 @@ dependencies:
 - name: YourKit Java Agent
   id:   yourkit-java
   uses: docker://ghcr.io/paketo-buildpacks/actions/yourkit-dependency:main
+  with:
+    arch: x64
 - name: YourKit Java Agent ARM64
   id:   yourkit-java
   uses: docker://ghcr.io/paketo-buildpacks/actions/yourkit-dependency:main
