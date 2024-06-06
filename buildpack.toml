@@ -61,14 +61,14 @@ api = "0.7"
       uri = "https://www.yourkit.com/purchase/eula.pdf"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:yourkit:java_profiler:2024.3.152:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:yourkit:java_profiler:2024.3.154:*:*:*:*:*:*:*"]
     id = "yourkit-java"
     name = "YourKit Java Agent"
-    purl = "pkg:generic/yourkit-java-profiler@2024.3.152?arch=arm64"
-    sha256 = "80eed465c2d449fc78df5c70b3b9a64bb29ac4fb87574f022f7aeb9b272c9506"
+    purl = "pkg:generic/yourkit-java-profiler@2024.3.154?arch=arm64"
+    sha256 = "f6bcf65b979b04e6f5db8dde3deaedf673316b4597627a87f92d02e7446f6beb"
     stacks = ["*"]
-    uri = "https://download.yourkit.com/yjp/2024.3/YourKit-JavaProfiler-2024.3-b152-arm64.zip"
-    version = "2024.3.152"
+    uri = "https://download.yourkit.com/yjp/2024.3/YourKit-JavaProfiler-2024.3-b154-arm64.zip"
+    version = "2024.3.154"
 
     [[metadata.dependencies.licenses]]
       uri = "https://www.yourkit.com/purchase/eula.pdf"
