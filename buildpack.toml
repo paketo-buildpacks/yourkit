@@ -48,14 +48,14 @@ api = "0.7"
     name = "BP_YOURKIT_ENABLED"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:yourkit:java_profiler:2024.9.159:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:yourkit:java_profiler:2024.9.160:*:*:*:*:*:*:*"]
     id = "yourkit-java"
     name = "YourKit Java Agent"
-    purl = "pkg:generic/yourkit-java-profiler@2024.9.159?arch=amd64"
-    sha256 = "342a6c533c4e33924c05092e92da5cfead41c2a0f4d6f7bb722e074ec23d8204"
+    purl = "pkg:generic/yourkit-java-profiler@2024.9.160?arch=amd64"
+    sha256 = "78876071844586a6d6abf74ea4cdd07c2e96e0bbae424cc3dafa137eb77c411b"
     stacks = ["*"]
-    uri = "https://download.yourkit.com/yjp/2024.9/YourKit-JavaProfiler-2024.9-b159-x64.zip"
-    version = "2024.9.159"
+    uri = "https://download.yourkit.com/yjp/2024.9/YourKit-JavaProfiler-2024.9-b160-x64.zip"
+    version = "2024.9.160"
 
     [[metadata.dependencies.licenses]]
       uri = "https://www.yourkit.com/purchase/eula.pdf"
