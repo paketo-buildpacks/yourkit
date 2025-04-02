@@ -1,4 +1,7 @@
-# `docker.io/paketobuildpacks/yourkit`
+# Paketo Buildpack for YourKit
+
+## Buildpack ID: `paketo-buildpacks/yourkit`
+## Registry URLs: `docker.io/paketobuildpacks/yourkit`
 The Paketo Buildpack for YourKit is a Cloud Native Buildpack that contributes the [YourKit][y] Agent and configures it to
 connect to the service.
 
