@@ -64,7 +64,7 @@ To add a [dependency mirror](https://paketo.io/docs/howto/configuration/#depende
 For example, if we wanted to use YourKit buildpack version 6.4.6:
 
 ```
-pack build, -e BP_DEPENDENCY_MIRROR_DOWNLOAD_YOURKIT_COM=https://archive.yourkit.com -e BP_YOURKIT_ENABLED=true -b urn:cnb:builder:paketo-buildpacks/java -b paketo-buildpacks/yourkit@6.4.6.
+pack build -e BP_DEPENDENCY_MIRROR_DOWNLOAD_YOURKIT_COM=https://archive.yourkit.com -e BP_YOURKIT_ENABLED=true -b urn:cnb:builder:paketo-buildpacks/java -b paketo-buildpacks/yourkit@6.4.6
 ```
 
 You may also use a [dependency mapping](https://paketo.io/docs/howto/configuration/#dependency-mappings) to change the download URL, however, this process requires a little more work and is specific to only one particular dependency. See the documention if you'd like to use this approach.
