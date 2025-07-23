@@ -53,6 +53,22 @@ Once the port has been published, your YourKit Profiler should connect to `local
 
 ![YourKit Configuration](yourkit.png)
 
+## Binary Availability
+
+YourKit publishes new versions of their product at `download.yourkit.com`, but then moves older versions to `archive.yourkit.com`. It is not possible for buildpacks to change the URL of a download once the buildpack version has been published. Thus when YourKit moves binaries from one domain to the other, it breaks old buildpacks.
+
+If you stay on the most recent buildpack version, you should always get the most recent version of YourKit which should download just fine. However, if you need to use an older version of the buildpack, perhaps because your YourKit license is capped at a particular YourKit version, then you will need to take the additional step of adding a dependency mirror to access those binaries on `archive.yourkit.com`.
+
+To add a [dependency mirror](https://paketo.io/docs/howto/configuration/#dependency-mirrors), you need to set the env varable `BP_DEPENDENCY_MIRROR_DOWNLOAD_YOURKIT_COM` to `https://archive.yourkit.com` when you build your application.
+
+For example, if we wanted to use YourKit buildpack version 6.4.6:
+
+```
+pack build, -e BP_DEPENDENCY_MIRROR_DOWNLOAD_YOURKIT_COM=https://archive.yourkit.com -e BP_YOURKIT_ENABLED=true -b urn:cnb:builder:paketo-buildpacks/java -b paketo-buildpacks/yourkit@6.4.6.
+```
+
+You may also use a [dependency mapping](https://paketo.io/docs/howto/configuration/#dependency-mappings) to change the download URL, however, this process requires a little more work and is specific to only one particular dependency. See the documention if you'd like to use this approach.
+
 ## License
 
 This buildpack is released under version 2.0 of the [Apache License][a].
