@@ -28,8 +28,8 @@ api = "0.7"
     uri = "https://github.com/paketo-buildpacks/yourkit/blob/main/LICENSE"
 
 [metadata]
-  include-files = ["LICENSE", "NOTICE", "README.md", "yourkit.png", "linux/amd64/bin/build", "linux/amd64/bin/detect", "linux/amd64/bin/main", "linux/amd64/bin/helper", "linux/arm64/bin/build", "linux/arm64/bin/detect", "linux/arm64/bin/main", "linux/arm64/bin/helper", "buildpack.toml"]
-  pre-package = "scripts/build.sh"
+  include-files = ["LICENSE", "NOTICE", "README.md", "yourkit.png", "linux/amd64/bin/build", "linux/amd64/bin/detect", "linux/amd64/bin/run", "linux/amd64/bin/helper", "linux/arm64/bin/build", "linux/arm64/bin/detect", "linux/arm64/bin/run", "linux/arm64/bin/helper", "buildpack.toml"]
+  pre-package = "scripts/build.sh --target linux/amd64 --target linux/arm64"
 
   [[metadata.configurations]]
     default = "10001"
@@ -48,30 +48,41 @@ api = "0.7"
     name = "BP_YOURKIT_ENABLED"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:yourkit:java_profiler:2026.3.176:*:*:*:*:*:*:*"]
+    arch = "amd64"
+    checksum = "sha256:bd51af153b6791e47db05e43ff4e38cc4cf5fc30bfb8577e99cd16fce2761af1"
+    cpe = "cpe:2.3:a:yourkit:java_profiler:2026.9.149:*:*:*:*:*:*:*"
     id = "yourkit-java"
     name = "YourKit Java Agent"
-    purl = "pkg:generic/yourkit-java-profiler@2026.3.176?arch=amd64"
-    sha256 = "b12d3f1322e866153a64df87dc6002a5aaea47bdafe6e1235e10b5b22b4fb84b"
+    os = "linux"
+    purl = "pkg:generic/yourkit-java-profiler@2026.9.149?arch=amd64"
+    sha256 = "bd51af153b6791e47db05e43ff4e38cc4cf5fc30bfb8577e99cd16fce2761af1"
     stacks = ["*"]
-    uri = "https://download.yourkit.com/yjp/2026.3.176/YourKit-Java-Profiler-2026.3.176-x64.zip"
-    version = "2026.3.176"
+    uri = "https://download.yourkit.com/yjp/2026.9.149/YourKit-Java-Profiler-2026.9.149-x64.zip"
+    version = "2026.9.149"
 
     [[metadata.dependencies.licenses]]
       uri = "https://www.yourkit.com/purchase/eula.pdf"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:yourkit:java_profiler:2026.3.176:*:*:*:*:*:*:*"]
+    arch = "arm64"
+    checksum = "sha256:34646b835f326e267a3b1618bf2d1ff91f332e09fcac54a7573c7927ba18cdb0"
+    cpe = "cpe:2.3:a:yourkit:java_profiler:2026.9.149:*:*:*:*:*:*:*"
     id = "yourkit-java"
     name = "YourKit Java Agent"
-    purl = "pkg:generic/yourkit-java-profiler@2026.3.176?arch=arm64"
-    sha256 = "15979209c8f769b02f8e192d85ad0cab92bed0013a09cd354ad2c6c71ae2d6eb"
+    os = "linux"
+    purl = "pkg:generic/yourkit-java-profiler@2026.9.149?arch=arm64"
+    sha256 = "34646b835f326e267a3b1618bf2d1ff91f332e09fcac54a7573c7927ba18cdb0"
     stacks = ["*"]
-    uri = "https://download.yourkit.com/yjp/2026.3.176/YourKit-Java-Profiler-2026.3.176-arm64.zip"
-    version = "2026.3.176"
+    uri = "https://download.yourkit.com/yjp/2026.9.149/YourKit-Java-Profiler-2026.9.149-arm64.zip"
+    version = "2026.9.149"
 
     [[metadata.dependencies.licenses]]
       uri = "https://www.yourkit.com/purchase/eula.pdf"
+
+  [[metadata.dependency-constraints]]
+    constraint = "2026.*"
+    id = "yourkit-java"
+    patches = 2
 
 [[stacks]]
   id = "*"
