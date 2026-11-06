@@ -1,17 +1,3 @@
-# Copyright 2018-2024 the original author or authors.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 api = "0.7"
 
 [buildpack]
@@ -75,6 +61,38 @@ api = "0.7"
     stacks = ["*"]
     uri = "https://download.yourkit.com/yjp/2026.9.149/YourKit-Java-Profiler-2026.9.149-arm64.zip"
     version = "2026.9.149"
+
+    [[metadata.dependencies.licenses]]
+      uri = "https://www.yourkit.com/purchase/eula.pdf"
+
+  [[metadata.dependencies]]
+    arch = "amd64"
+    checksum = "sha256:f7ef2ab8856fadcf72ce90e9c615405f9d94b8f10ba3ca2e4043b4871410746c"
+    cpe = "cpe:2.3:a:yourkit:java_profiler:2026.9.157:*:*:*:*:*:*:*"
+    id = "yourkit-java"
+    name = "YourKit Java Agent"
+    os = "linux"
+    purl = "pkg:generic/yourkit-java-profiler@2026.9.157?arch=amd64"
+    sha256 = "f7ef2ab8856fadcf72ce90e9c615405f9d94b8f10ba3ca2e4043b4871410746c"
+    stacks = ["*"]
+    uri = "https://download.yourkit.com/yjp/2026.9.157/YourKit-Java-Profiler-2026.9.157-x64.zip"
+    version = "2026.9.157"
+
+    [[metadata.dependencies.licenses]]
+      uri = "https://www.yourkit.com/purchase/eula.pdf"
+
+  [[metadata.dependencies]]
+    arch = "arm64"
+    checksum = "sha256:0431fb347ebf4f449ea846745b24ca35ff76e2611dca02ba7fae697aa3fdef7f"
+    cpe = "cpe:2.3:a:yourkit:java_profiler:2026.9.157:*:*:*:*:*:*:*"
+    id = "yourkit-java"
+    name = "YourKit Java Agent"
+    os = "linux"
+    purl = "pkg:generic/yourkit-java-profiler@2026.9.157?arch=arm64"
+    sha256 = "0431fb347ebf4f449ea846745b24ca35ff76e2611dca02ba7fae697aa3fdef7f"
+    stacks = ["*"]
+    uri = "https://download.yourkit.com/yjp/2026.9.157/YourKit-Java-Profiler-2026.9.157-arm64.zip"
+    version = "2026.9.157"
 
     [[metadata.dependencies.licenses]]
       uri = "https://www.yourkit.com/purchase/eula.pdf"
